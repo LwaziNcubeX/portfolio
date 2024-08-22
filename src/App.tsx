@@ -1,13 +1,14 @@
 import './App.css'
+import { Navbar } from './components'
+import Component from './components/main'
 
 function App() {
 
   return (
     <>
-      <div>
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          Hello world
-        </h1>
+      <div className="flex flex-col min-h-screen bg-black text-white">
+        <Navbar/>
+        <Component/>
       </div>
     </>
   )
