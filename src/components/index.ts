@@ -1,7 +1,5 @@
-import { NavMenu } from "./navbar/nav-menu";
-import Navbar from "./navbar/Navbar";
+import Navbar from "./Navbar";
 
 export {
     Navbar,
-    NavMenu
 }
