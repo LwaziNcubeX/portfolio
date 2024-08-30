@@ -52,10 +52,12 @@ const Hero = () => {
           >
             <img src="/logo.svg" alt="Lwazi Ncube Logo" width={112} height={112} className="w-full h-full" />
           </motion.div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 sm:mt-8 mb-2 sm:mb-4">
+          <h1 className="text-3xl font-oswald sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 sm:mt-8 mb-2 sm:mb-4">
             Lwazi Ncube
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-orange-500 mb-4 sm:mb-6">TypeScript Maestro & Backend Architect</h2>
+          <h2 className="text-lg font-oswald sm:text-xl md:text-2xl lg:text-3xl text-orange-500 mb-4 sm:mb-6">
+            Backend Engineer & Bot Developer
+          </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
             Crafting robust, type-safe APIs and scalable systems with the power of TypeScript.
             Turning complex backend challenges into elegant, maintainable solutions.

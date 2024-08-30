@@ -21,7 +21,9 @@ const About = () => {
     <div className="bg-gray-950 text-white">
       <div className="container mx-auto px-4">
         <Section id="about">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center pb-4">About Me</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center pb-4 font-oswald">
+            About Me
+          </h2>
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="flex justify-center items-center">
               <motion.div 

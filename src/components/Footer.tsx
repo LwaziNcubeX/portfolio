@@ -30,7 +30,7 @@ const Footer = () => {
           </motion.div>
         </div>
         <p className="text-zinc-400 text-sm sm:text-base">
-          &copy; {new Date().getFullYear()} Lwazi Ncube. Crafted with TypeScript and React.
+          &copy; {new Date().getFullYear()} Lwazilwenkosi Ncube.
         </p>
       </div>
     </footer>

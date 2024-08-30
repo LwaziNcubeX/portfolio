@@ -56,7 +56,9 @@ const Projects = () => {
     <div className="bg-gray-950 text-white">
       <div className="container mx-auto px-4">
         <Section id="projects">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">Featured Projects</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 md:mb-12 text-center font-oswald">
+            Featured Projects
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects.map((project, index) => (
               <Card 
