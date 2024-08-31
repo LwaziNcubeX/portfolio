@@ -36,7 +36,7 @@ const Header = () => {
     <div className="bg-gray-950 text-white">
       <header className="fixed top-0 left-0 right-0 bg-gray-950/80 backdrop-blur-md py-2 md:py-4 z-50">
         <nav className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-xl md:text-2xl font-bold font-oswald">Lwazi<span className="text-orange-500">.</span></h1>
+          <h1 className="text-xl md:text-2xl font-bold font-oswald">Lwazi<span className="text-orange-500 font-inter">.</span></h1>
           
           <div className="hidden md:flex space-x-4 lg:space-x-8">
             {["Home", "About", "Projects", "Skills", "Contact"].map((item) => (
