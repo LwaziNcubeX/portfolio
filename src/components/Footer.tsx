@@ -4,7 +4,7 @@ import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-800 py-8 sm:py-12 mt-12 sm:mt-20">
+    <footer className="bg-slate-950 py-8 sm:py-12 mt-12 sm:mt-20">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-xl sm:text-2xl font-bold mb-4">Connect with Me</h2>
         <div className="flex justify-center space-x-2 sm:space-x-4 mb-6 sm:mb-8">

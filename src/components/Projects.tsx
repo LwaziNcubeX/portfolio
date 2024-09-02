@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { GithubIcon, ExternalLinkIcon } from 'lucide-react'
 
 const Section = ({ children, id }: { children: React.ReactNode; id: string }) => {
   return (
@@ -21,34 +23,41 @@ const Section = ({ children, id }: { children: React.ReactNode; id: string }) =>
 const Projects = () => {
   const projects = [
     {
-      title: "TypeSafe API Gateway",
-      description: "High-performance API gateway with built-in type checking",
+      title: "AquaBills - Water billing system",
+      description: "AquaBills is a comprehensive water billing management system designed to streamline the process of managing water usage and billing. It automates the calculation of water bills based on consumption, generates invoices, and tracks payments.",
       tags: [
-        { name: "TypeScript", color: "bg-blue-700 text-white" },
-        { name: "Node.js", color: "bg-green-700 text-white" },
-        { name: "Express", color: "bg-gray-700 text-white" },
+        { name: "React", color: "bg-teal-600 text-white" },
+        { name: "Python", color: "bg-yellow-600 text-white" },
+        { name: "Appwrite", color: "bg-pink-600 text-white" },
+        { name: "Flask", color: "bg-green-600 text-white" },
       ],
-      image: "/images/image.jpg?height=200&width=360",
+      image: "/images/aquabills.png?height=200&width=360",
+      sourceCode: "https://github.com/yourusername/aquabills",
+      demoLink: "https://aquabills.vercel.app",
     },
     {
-      title: "Distributed Task Queue",
-      description: "Scalable, type-safe distributed task queue for microservices",
+      title: "Renomy - Telegram Bot",
+      description: "A file management and automation service for Telegram",
       tags: [
-        { name: "TypeScript", color: "bg-blue-600 text-white" },
-        { name: "Redis", color: "bg-red-600 text-white" },
-        { name: "Docker", color: "bg-blue-500 text-white" },
+        { name: "Python", color: "bg-yellow-600 text-white" },
+        { name: "python-telegram-bot", color: "bg-blue-600 text-white" },
+        { name: "MongoDB", color: "bg-green-600 text-white" },
       ],
-      image: "/images/image2.jpg?height=200&width=360"
+      image: "/images/image2.jpg?height=200&width=360",
+      sourceCode: "https://github.com/yourusername/renomy-bot",
+      demoLink: "https://t.me/RenomyBot",
     },
     {
       title: "Real-time Analytics Dashboard",
       description: "Responsive dashboard for visualizing real-time data streams",
       tags: [
-        { name: "React", color: "bg-cyan-600 text-white" },
+        { name: "React", color: "bg-teal-600 text-white" },
         { name: "TypeScript", color: "bg-blue-600 text-white" },
         { name: "WebSocket", color: "bg-purple-600 text-white" },
       ],
-      image: "/images/image3.jpg?height=200&width=360"
+      image: "/images/image3.jpg?height=200&width=360",
+      sourceCode: "https://github.com/yourusername/realtime-analytics",
+      demoLink: "https://realtime-analytics-demo.vercel.app",
     }
   ]
 
@@ -63,7 +72,7 @@ const Projects = () => {
             {projects.map((project, index) => (
               <Card 
                 key={index} 
-                className="bg-gray-950 border-none overflow-hidden rounded-lg drop-shadow-lg shadow-orange-500/50"
+                className="bg-slate-950 border-none overflow-hidden rounded-lg drop-shadow-lg shadow-orange-500/50 flex flex-col"
               >
                 <div className="relative">
                   <img
@@ -72,7 +81,7 @@ const Projects = () => {
                     className="w-full aspect-video object-cover rounded-t-lg"
                   />
                 </div>
-                <CardContent className="p-3 sm:p-4">
+                <CardContent className="p-3 sm:p-4 flex flex-col flex-grow">
                   <div className="flex flex-wrap gap-1 sm:gap-2 pb-2 sm:pb-3">
                     {project.tags.map((tag, i) => (
                       <Badge 
@@ -85,7 +94,21 @@ const Projects = () => {
                     ))}
                   </div>
                   <h3 className="text-orange-500 font-serif font-bold mb-1 sm:mb-2 text-base sm:text-lg line-clamp-2">{project.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-300 line-clamp-2">{project.description}</p>
+                  <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 mb-3">{project.description}</p>
+                  <div className="flex gap-2 mt-auto">
+                    <Button variant="link" size="sm" asChild>
+                      <a href={project.sourceCode} target="_blank" rel="noopener noreferrer">
+                        <GithubIcon className="w-4 h-4 mr-2" />
+                        Source
+                      </a>
+                    </Button>
+                    <Button variant="link" size="sm" asChild>
+                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                        <ExternalLinkIcon className="w-4 h-4 mr-2" />
+                        Demo
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
