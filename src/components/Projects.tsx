@@ -1,9 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { GithubIcon, ExternalLinkIcon } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Section = ({ children, id }: { children: React.ReactNode; id: string }) => {
   return (
@@ -13,7 +13,7 @@ const Section = ({ children, id }: { children: React.ReactNode; id: string }) =>
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="py-12 md:py-20"
+      className="py-16 md:py-24"
     >
       {children}
     </motion.section>
@@ -22,94 +22,63 @@ const Section = ({ children, id }: { children: React.ReactNode; id: string }) =>
 
 const Projects = () => {
   const projects = [
-    {
-      title: "AquaBills - Water billing system",
-      description: "AquaBills is a comprehensive water billing management system designed to streamline the process of managing water usage and billing. It automates the calculation of water bills based on consumption, generates invoices, and tracks payments.",
-      tags: [
-        { name: "React", color: "bg-teal-600 text-white" },
-        { name: "Python", color: "bg-yellow-600 text-white" },
-        { name: "Appwrite", color: "bg-pink-600 text-white" },
-        { name: "Flask", color: "bg-green-600 text-white" },
-      ],
-      image: "/images/aquabills.png?height=200&width=360",
-      sourceCode: "https://github.com/yourusername/aquabills",
-      demoLink: "https://aquabills.vercel.app",
-    },
-    {
-      title: "Renomy - Telegram Bot",
-      description: "A file management and automation service for Telegram",
-      tags: [
-        { name: "Python", color: "bg-yellow-600 text-white" },
-        { name: "python-telegram-bot", color: "bg-blue-600 text-white" },
-        { name: "MongoDB", color: "bg-green-600 text-white" },
-      ],
-      image: "/images/image2.jpg?height=200&width=360",
-      sourceCode: "https://github.com/yourusername/renomy-bot",
-      demoLink: "https://t.me/RenomyBot",
-    },
-    {
-      title: "Real-time Analytics Dashboard",
-      description: "Responsive dashboard for visualizing real-time data streams",
-      tags: [
-        { name: "React", color: "bg-teal-600 text-white" },
-        { name: "TypeScript", color: "bg-blue-600 text-white" },
-        { name: "WebSocket", color: "bg-purple-600 text-white" },
-      ],
-      image: "/images/image3.jpg?height=200&width=360",
-      sourceCode: "https://github.com/yourusername/realtime-analytics",
-      demoLink: "https://realtime-analytics-demo.vercel.app",
-    }
-  ]
+  {
+    id: 1,
+    title: "AquaBills",
+    description: "AquaBills is an advanced water billing management system that simplifies water usage tracking and billing. It offers automated calculations based on consumption, easy invoice generation, and efficient payment tracking, providing a seamless solution for managing water utilities.",
+    image: "/images/aquabills.png?height=200&width=360",
+  },
+  {
+    id: 2,
+    title: "Renomy",
+    description: "Renomy is a versatile Telegram bot designed to manage and automate file-related tasks. It offers features like renaming, compressing, and transferring files, making it a powerful tool for streamlining your file management workflow.",
+    image: "/images/image4.jpg?height=200&width=360",
+  },
+  {
+    id: 3,
+    title: "Events Tracker API",
+    description: "The Events Tracker API is a robust backend service that helps you efficiently track and manage events. It supports creating, updating, and querying events, making it ideal for integrating event management capabilities into your applications.",
+    image: "/images/image5.jpg?height=200&width=360",
+  }
+]
+
 
   return (
     <div className="bg-gray-950 text-white">
-      <div className="container mx-auto px-4">
+      <div className="container max-w-6xl px-6">
         <Section id="projects">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 md:mb-12 text-center font-oswald">
+          <h2 className="text-4xl font-bold mb-8 text-center font-oswald">
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {projects.map((project, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
               <Card 
-                key={index} 
-                className="bg-slate-950 border-none overflow-hidden rounded-lg drop-shadow-lg shadow-orange-500/50 flex flex-col"
+                key={project.id}
+                className="bg-gray-950 border-none overflow-hidden rounded-t-lg transition-all duration-300 hover:shadow-md hover:shadow-orange-500/35"
               >
-                <div className="relative">
+                <Link to={`${project.id}`} className="relative block">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-video object-cover rounded-t-lg"
+                    className="object-cover aspect-video rounded-t-lg"
                   />
-                </div>
-                <CardContent className="p-3 sm:p-4 flex flex-col flex-grow">
-                  <div className="flex flex-wrap gap-1 sm:gap-2 pb-2 sm:pb-3">
-                    {project.tags.map((tag, i) => (
-                      <Badge 
-                        key={i} 
-                        variant="default" 
-                        className={`${tag.color} font-sans text-xs rounded-sm`}
-                      >
-                        {tag.name}
-                      </Badge>
-                    ))}
-                  </div>
-                  <h3 className="text-orange-500 font-serif font-bold mb-1 sm:mb-2 text-base sm:text-lg line-clamp-2">{project.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 mb-3">{project.description}</p>
-                  <div className="flex gap-2 mt-auto">
-                    <Button variant="link" size="sm" asChild>
-                      <a href={project.sourceCode} target="_blank" rel="noopener noreferrer">
-                        <GithubIcon className="w-4 h-4 mr-2" />
-                        Source
-                      </a>
-                    </Button>
-                    <Button variant="link" size="sm" asChild>
-                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                        <ExternalLinkIcon className="w-4 h-4 mr-2" />
-                        Demo
-                      </a>
-                    </Button>
-                  </div>
+                  <div/>
+                </Link>
+                <CardContent className="px-4 pt-4">
+                  <Link to={`/project/${project.id}`}>
+                    <h3 className="text-2xl font-bold mb-3 text-orange-500 hover:text-orange-400 transition-colors duration-300 font-oswald">{project.title}</h3>
+                  </Link>
+                  <p className="text-gray-300 mb-3 line-clamp-3">{project.description}</p>
                 </CardContent>
+                <CardFooter className="px-3 pb-3 flex justify-between items-center">
+                
+                  <Button className="w-full mb-0 bg-orange-500 hover:bg-orange-600" asChild>
+                    <Link to={`/project/${project.id}`}>
+                      Learn more
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>

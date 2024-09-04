@@ -23,7 +23,7 @@ interface Skill {
 
 const SkillIcon: React.FC<Skill> = ({ icon: Icon, name }) => (
   <div className="flex flex-col items-center">
-    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-zinc-950 flex items-center justify-center">
+    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center">
       <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-orange-500" />
     </div>
     <span className="mt-2 text-xs sm:text-sm">{name}</span>
@@ -41,7 +41,7 @@ const Skills: React.FC = () => {
   ]
 
   return (
-    <div className="bg-slate-950 text-white">
+    <div className=" text-white">
       <div className="container mx-auto px-4">
         <Section id="skills">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12 text-center font-oswald">
