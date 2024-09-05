@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion} from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Menu, X } from 'lucide-react'
+import { handleClick } from './common'
+
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("home")
@@ -84,7 +86,7 @@ const Header = () => {
                 </Button>
               ))}
             </div>
-            <Button className="w-full mt-4 bg-orange-500 hover:bg-orange-600">Hire me!</Button>
+            <Button onClick={() => handleClick('https://www.google.com')} className="w-full mt-4 bg-orange-500 hover:bg-orange-600">Hire me!</Button>
           </motion.div>
         )}
       </header>

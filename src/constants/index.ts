@@ -32,3 +32,5 @@ export const projects = [
     features: ['Event creation and management', 'Querying and updating events'],
   }
 ]
+
+export const liked = "www.google.com"
