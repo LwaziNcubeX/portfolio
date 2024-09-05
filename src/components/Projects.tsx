@@ -1,9 +1,11 @@
-import React from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { projects } from '@/constants'
+import { ProjectDetails } from './ProjectDetails'
 
 const Section = ({ children, id }: { children: React.ReactNode; id: string }) => {
   return (
@@ -20,28 +22,10 @@ const Section = ({ children, id }: { children: React.ReactNode; id: string }) =>
   )
 }
 
-const Projects = () => {
-  const projects = [
-  {
-    id: 1,
-    title: "AquaBills",
-    description: "AquaBills is an advanced water billing management system that simplifies water usage tracking and billing. It offers automated calculations based on consumption, easy invoice generation, and efficient payment tracking, providing a seamless solution for managing water utilities.",
-    image: "/images/aquabills.png?height=200&width=360",
-  },
-  {
-    id: 2,
-    title: "Renomy",
-    description: "Renomy is a versatile Telegram bot designed to manage and automate file-related tasks. It offers features like renaming, compressing, and transferring files, making it a powerful tool for streamlining your file management workflow.",
-    image: "/images/image4.jpg?height=200&width=360",
-  },
-  {
-    id: 3,
-    title: "Events Tracker API",
-    description: "The Events Tracker API is a robust backend service that helps you efficiently track and manage events. It supports creating, updating, and querying events, making it ideal for integrating event management capabilities into your applications.",
-    image: "/images/image5.jpg?height=200&width=360",
-  }
-]
 
+
+const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<any>(null)
 
   return (
     <div className="bg-gray-950 text-white">
@@ -56,28 +40,32 @@ const Projects = () => {
                 key={project.id}
                 className="bg-gray-950 border-none overflow-hidden rounded-t-lg transition-all duration-300 hover:shadow-md hover:shadow-orange-500/35"
               >
-                <Link to={`${project.id}`} className="relative block">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="object-cover aspect-video rounded-t-lg"
                   />
                   <div/>
-                </Link>
                 <CardContent className="px-4 pt-4">
-                  <Link to={`/project/${project.id}`}>
                     <h3 className="text-2xl font-bold mb-3 text-orange-500 hover:text-orange-400 transition-colors duration-300 font-oswald">{project.title}</h3>
-                  </Link>
+                  
                   <p className="text-gray-300 mb-3 line-clamp-3">{project.description}</p>
                 </CardContent>
                 <CardFooter className="px-3 pb-3 flex justify-between items-center">
-                
-                  <Button className="w-full mb-0 bg-orange-500 hover:bg-orange-600" asChild>
-                    <Link to={`/project/${project.id}`}>
-                      Learn more
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
+                <Sheet>
+                    <SheetTrigger asChild>
+                      <Button 
+                        className="w-full mb-0 bg-orange-500 hover:bg-orange-600"
+                        onClick={() => setSelectedProject(project)}
+                      >
+                        Learn more
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="bottom" className="bg-gray-950 border-t border-gray-950">
+                      {selectedProject && <ProjectDetails project={selectedProject} />}
+                    </SheetContent>
+                  </Sheet>
                 </CardFooter>
               </Card>
             ))}
