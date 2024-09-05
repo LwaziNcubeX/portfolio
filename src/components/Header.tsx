@@ -3,6 +3,7 @@ import { motion} from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Menu, X } from 'lucide-react'
 import { handleClick } from './common'
+import { EMAIL_ADDRESS } from '@/constants'
 
 
 const Header = () => {
@@ -54,7 +55,7 @@ const Header = () => {
             ))}
           </div>
           
-          <Button onClick={() => handleClick('https://www.google.com')} className="hidden md:block bg-orange-500 hover:bg-orange-600">Hire me!</Button>
+          <Button onClick={() => handleClick(EMAIL_ADDRESS)} className="hidden md:block bg-orange-500 hover:bg-orange-600">Hire me!</Button>
           
           <Button 
             variant="ghost" 
@@ -86,7 +87,7 @@ const Header = () => {
                 </Button>
               ))}
             </div>
-            <Button onClick={() => handleClick('https://www.google.com')} className="w-full mt-4 bg-orange-500 hover:bg-orange-600">Hire me!</Button>
+            <Button onClick={() => handleClick(EMAIL_ADDRESS)} className="w-full mt-4 bg-orange-500 hover:bg-orange-600">Hire me!</Button>
           </motion.div>
         )}
       </header>

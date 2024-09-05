@@ -1,3 +1,10 @@
+/* LINKS */
+export const EMAIL_ADDRESS = 'www.google.com'
+export const GITHUB_URL = "https://github.com/LwaziNcubeX/"
+export const X_URL = ""
+export const LINKEDIN_URL = "https://www.linkedin.com/in/lwazincubex/"
+
+
 export const projects = [
   {
     id: 1,
@@ -32,5 +39,3 @@ export const projects = [
     features: ['Event creation and management', 'Querying and updating events'],
   }
 ]
-
-export const liked = "www.google.com"
