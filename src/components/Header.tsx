@@ -54,7 +54,7 @@ const Header = () => {
             ))}
           </div>
           
-          <Button className="hidden md:block bg-orange-500 hover:bg-orange-600">Hire me!</Button>
+          <Button onClick={() => handleClick('https://www.google.com')} className="hidden md:block bg-orange-500 hover:bg-orange-600">Hire me!</Button>
           
           <Button 
             variant="ghost" 
