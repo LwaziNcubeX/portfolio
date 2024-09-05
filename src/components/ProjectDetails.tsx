@@ -1,10 +1,8 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "./ui/button";
-import { SheetHeader, SheetTitle, SheetDescription } from "./ui/sheet";
+import { SheetDescription } from "./ui/sheet";
 
 export const ProjectDetails = ({ project }: { project: any }) => (
-  <SheetHeader className="p-3">
-    <SheetTitle/>
     <SheetDescription />
       <div className="flex flex-col md:flex-row gap-6 h-[40vh] overflow-y-auto">
         <div className="md:w-1/3">
@@ -60,5 +58,4 @@ export const ProjectDetails = ({ project }: { project: any }) => (
           </div>
         </div>
       </div>
-  </SheetHeader>
 );
