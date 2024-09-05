@@ -4,11 +4,7 @@ import { SheetHeader, SheetTitle, SheetDescription } from "./ui/sheet";
 
 export const ProjectDetails = ({ project }: { project: any }) => (
   <SheetHeader className="p-3">
-    <SheetTitle>
-      <h2 className="text-3xl font-bold font-oswald mb-2 text-orange-500 text-left">
-        {project.title}
-      </h2>
-    </SheetTitle>
+    <SheetTitle/>
     <SheetDescription />
       <div className="flex flex-col md:flex-row gap-6 h-[40vh] overflow-y-auto">
         <div className="md:w-1/3">
