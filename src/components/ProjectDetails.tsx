@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { SheetDescription } from "./ui/sheet";
 
 export const ProjectDetails = ({ project }: { project: any }) => (
+    <div>
     <SheetDescription />
       <div className="flex flex-col md:flex-row gap-6 h-[40vh] overflow-y-auto">
         <div className="md:w-1/3">
@@ -58,4 +59,5 @@ export const ProjectDetails = ({ project }: { project: any }) => (
           </div>
         </div>
       </div>
+    </div>
 );
