@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
               <Github className="h-5 w-5 sm:h-6 sm:w-6" />
             </Button>
           </motion.div>
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{scale: 0.8 }}>
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
             <Button variant="ghost" size="icon" aria-label="Twitter">
               <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />
             </Button>
@@ -34,7 +34,7 @@ const Footer = () => {
         </p>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
